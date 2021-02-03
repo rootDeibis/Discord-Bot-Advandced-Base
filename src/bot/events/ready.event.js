@@ -9,7 +9,6 @@ module.exports = {
 		var Prefix = "[Discord-Bot] ".brightCyan;
 
 		console.log(Prefix + "Bot is ready!");
-;
 
 	}
 }
