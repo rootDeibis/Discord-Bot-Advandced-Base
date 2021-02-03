@@ -1,7 +1,7 @@
 {
 	"bot": {
 		"prefix": "+",
-		"token": "ODA2NTQ5OTYwNzIzMjY3NTg1.YBrELw.R6VuXimm9DytkPlDfEkA695sS74",
+		"token": "BOT TOKEN HERE",
 		"status": "idle",
 		"activity": {
 			"content": "Example Discord Bot Advanced Base",
