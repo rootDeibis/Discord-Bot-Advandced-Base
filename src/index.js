@@ -22,7 +22,7 @@ const Export = {Discord, Client, Collections , Config, dir};
 
 /* LOAD EVENTS */
 
-FileSearcher("js", __dirname + "\\bot\\events\\", events => {
+FileSearcher("js", dir + "\\bot\\events\\", events => {
 	FileRequirer(events, event => {
 		Client.on(event.name, event_props => event.call(event_props, Export));
 	});
@@ -33,7 +33,7 @@ FileSearcher("js", __dirname + "\\bot\\events\\", events => {
 
 /* LOAD COMMANDS */
 
-FileSearcher("js", __dirname + "\\bot\\commands\\", Commands => {
+FileSearcher("js", dir + "\\bot\\commands\\", Commands => {
 	FileRequirer(Commands, command => {
 		Collections.commands.set(Config.bot.prefix + command.name, command);
 	});
