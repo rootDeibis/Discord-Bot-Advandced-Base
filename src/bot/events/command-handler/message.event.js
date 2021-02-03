@@ -16,6 +16,7 @@ module.exports = {
 
 		if (Event.author.bot) return; //# Check if the sender is a bot
 
+		if (Event.channel.type === 'dm') return; //# If the channel type is 'DM' do not execute
 		cmd.execute(Args.slice(1), Export);
 
 
