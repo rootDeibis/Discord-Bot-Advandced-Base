@@ -1,6 +1,11 @@
 {
 	"bot": {
 		"prefix": "+",
-		"token": "/* BOT TOKEN /*"
+		"token": "ODA2NTQ5OTYwNzIzMjY3NTg1.YBrELw.R6VuXimm9DytkPlDfEkA695sS74",
+		"status": "idle",
+		"activity": {
+			"content": "Example Discord Bot Advanced Base",
+			"type": "WATCHING"
+		}
 	}
 }
