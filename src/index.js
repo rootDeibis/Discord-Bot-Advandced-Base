@@ -5,39 +5,39 @@ const Discord = require('discord.js'),
 	  dir =  __dirname;
 
 
-/* COLLECTORS */
+
+
+//# Create Collectors
 
 const Collections = { 
 	commands: new Discord.Collection()
 };
 
 
-Client.login(Config.bot.token);
+Client.login(Config.bot.token); //# Login Bot
 
-/* ========== */
 
-/* # DEFINE DISCORD EXPORTS  */
 
+//# Define Exports Parameters
 const Export = {Discord, Client, Collections , Config, dir};
 
 
-/* LOAD EVENTS */
 
+
+//# Load All Events
 FileSearcher("event.js", dir + "\\bot\\events\\", events => {
 	FileRequirer(events, event => {
 		Client.on(event.name, event_props => event.call(event_props, Export));
 	});
 });
 
-/* ========== */
 
 
-/* LOAD COMMANDS */
+
+//# Load All Commands
 
 FileSearcher("command.js", dir + "\\bot\\commands\\", Commands => {
 	FileRequirer(Commands, command => {
 		Collections.commands.set(Config.bot.prefix + command.name, command);
 	});
 });
-
-/* ========== */
