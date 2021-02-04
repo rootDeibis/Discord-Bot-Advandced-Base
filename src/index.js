@@ -1,9 +1,10 @@
 const Discord = require('discord.js'), 
 	  Client = new Discord.Client(),
 	  {AsyncFileSearcher, FileSearcher, FileRequirer} = require("./extends/FileTools"),
-	  Config = require("./settings.json"),
 	  dir =  __dirname;
-
+	  StringUtils = require("./extends/Strings"),
+	  Config = require("./settings.json");
+	  
 
 
 
@@ -19,7 +20,7 @@ Client.login(Config.bot.token); //# Login Bot
 
 
 //# Define Exports Parameters
-const Export = {Discord, Client, Collections , Config, dir};
+const Export = {Discord, Client, Collections , StringUtils, Config, dir};
 
 
 
