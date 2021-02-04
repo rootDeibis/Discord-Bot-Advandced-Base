@@ -1,7 +1,7 @@
 module.exports = {
 	name: "say",
 	execute: (args, Import) => {
-		require(Import.dir + "\\extends\\Strings").Apply();
+		Import.StringUtils.apply();
 
 		var CommandEvent = Import.Event;
 
