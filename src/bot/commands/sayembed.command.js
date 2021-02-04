@@ -7,6 +7,8 @@ module.exports = {
 		var CommandEvent = Import.Event;
 		var Message = args.join(" ");
 
+		var channel = Message.utilSearch("channel");
+
 		var Embed = {
 			title: Message.utilSearch("title"),
 			description: Message.utilSearch("description"),
@@ -26,7 +28,15 @@ module.exports = {
 						   .setImage(Embed.image)
 						   .setColor(Embed.color);
 
-		CommandEvent.channel.send(BuildEmbed);
+		if (channel == null) return CommandEvent.channel.send(BuildEmbed);
+
+		channel = CommandEvent.guild.channels.cache.find(c => c.name == channel && c.type == 'text');
+
+		if (!channel) return CommandEvent.channel.send("Channel not found or not a text channel.");
+
+		channel.send(BuildEmbed);
+
+		
 
 	}
 }
